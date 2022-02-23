@@ -1,0 +1,37 @@
+.ho{
+    background-image:url(https://cnnespanol.cnn.com/wp-content/uploads/2016/11/161102175336-cnnee-promo-enfoque-argentina-00000117-full-169.jpg?quality=100&strip=info&w=384&h=216&crop=1);
+    padding: 70px;
+}
+.hom {
+    
+    color:rgb(43, 205, 226);
+    text-shadow: rgb(161, 97, 97);
+    align-items: left;
+    
+}
+.hon{
+    padding: 5px 20px ;
+    color:green;
+    gap:10px;
+    border:flex;
+    border-color:rgb(0, 204, 255);
+}
+.honn{
+    padding: 5px 20px ;
+    color:rgb(155, 33, 33);
+    border:flex;
+    border-color:rgb(45, 45, 207);
+}
+.honny{
+padding: 5px 20px ;
+color:rgb(47, 192, 178);
+border:flex;
+border-color: blue;
+}
+.btn{
+    padding: 2px 15px;
+    color:black;
+    border:flex;
+    border-color:rgb(160, 17, 17);
+    
+}

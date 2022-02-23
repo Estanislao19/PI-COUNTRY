@@ -1,0 +1,15 @@
+.page{
+background-image: url(https://i.ytimg.com/vi/t9mge2QrHig/maxresdefault.jpg);
+background-position: center;
+
+background-size: cover;
+height: 40rem;
+padding: 5rem;
+background-repeat: no-repeat;
+}
+
+.h1{
+    color:black;
+    text-shadow: 3px 3px rgb(207, 14, 14);
+    
+}
