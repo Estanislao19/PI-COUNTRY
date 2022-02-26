@@ -1,37 +1,39 @@
 import React from 'react';
 import { useState,useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getCountries,filterCountriesByContinents, filterPopulation,filterAlfa, getActivity, filterByActivity} from '../actions';
+import {getCountries,filterCountriesByContinents, filterPopulation,filterAlfa, getActivity} from '../actions';
 import { Link } from 'react-router-dom';
 import Card from './Card'; 
 import Paginado from './Paginado';
 import SearchBar from './SearchBar';
-import ActivityFilter from './ActivityFilter';
+
 import Style from './Home.module.css';
+import FiltActivity from './FiltActivity';
 
 export default function Home(){
 	const dispatch = useDispatch (); // hook
 	const allCountries = useSelector ((state) =>state.countries);
-	const [filterState, setFilterState] = useState({
-		continent: [],
-		sort: "Orden",
-		activity: "All",
-		countrySearch: "",
-	  });
-    const [currentPage,setCurrentPage] =useState(1); 
+	
+    /*const [currentPage,setCurrentPage] =useState(1); 
 	const [countriesPerPage] =useState(9);
 	const indexOfLastCountry= currentPage * countriesPerPage// 9
 	const indexOfFirstCountry= indexOfLastCountry - countriesPerPage; // 0
-	const currentCountry = allCountries.slice(indexOfLastCountry, indexOfFirstCountry) //va a setar la pagina en el indice que yo toque
+	const currentCountry = allCountries.slice(indexOfLastCountry, indexOfFirstCountry) //va a setar la pagina en el indice que yo toque*/
 	const [order, setOrder] = useState('')
 	const [orderaz,setOrderAZ] =useState('')
-	const allActivities = useSelector((state)=> state.activities)
-     
-	
-	const paginado = (pageNumber) => {//va a setar la pagina en el indice que yo toque
-		setCurrentPage(pageNumber)
-	}
-     
+	const [currentPage, setCurrentPage] = useState(1)//1ro mi pagina actual y un estado q setee mi pag actual
+    // const [countriesPerPage, setCountriesPerPage] = useState(10)//setea cant personajes x pag
+    var countriesPerPage = 0;
+    if (currentPage === 1) { countriesPerPage = 9 }
+   if (currentPage >= 2) { countriesPerPage = 10 }
+    const lastCountry = currentPage * countriesPerPage//10
+    const firstCountry = lastCountry - countriesPerPage //0
+    const currentCountries = allCountries.slice(firstCountry, lastCountry)//ésta constante tiene los personajes que estan en la pagina actual
+
+    const paginado = (pageNumber) => {
+        setCurrentPage(pageNumber)
+    }
+
    function handleClick(e){
 		e.preventDefault();
 		dispatch(getCountries());
@@ -43,7 +45,7 @@ export default function Home(){
 		dispatch(getActivity())
 	},[dispatch])
 
-
+	
 	
 	function handleFilterStatus(e){
      dispatch(filterCountriesByContinents(e.target.value)) // para aceder a la functiones(e.target.value)
@@ -60,10 +62,7 @@ export default function Home(){
 	 dispatch(filterAlfa(e.target.value));
 	 setOrderAZ(`Ordenado ${e.target.value}`)
 	 }
-     function handleFilterActivity(e){
-		 dispatch(filterByActivity(e.target.value))
-		 console.log('e',e.target.value)
-	 }
+     
 	 
 	 return(
 		
@@ -73,7 +72,6 @@ export default function Home(){
 		<h1 className={Style.hom}>PAGINA DE PAISES</h1>
 		</div>
 		<div >
-		
 		<select className={Style.hon} onChange = {e=>handleFilterStatus(e)} >
 		<option value="All">Todos</option>
 		<option value="Europe">Europa</option>
@@ -97,24 +95,24 @@ export default function Home(){
 		<br/>
 		<div>
 		<SearchBar/>
-		{currentCountry &&
-		<Paginado 
-		countriesPerPage={countriesPerPage}
-		allCountries={allCountries.length}
-		paginado={paginado}>
-		</Paginado>}</div> 
-		<ActivityFilter
-            setCurrentPage={setCurrentPage}
-            setFilterState={setFilterState}
-            filterState={filterState}
-          />
-		{allCountries.map(el=>{
-		return(
-		<div key={el.id} >
-		<Link to= {'/home/' + el.id}>
-		<Card name={el.name} continents={el.continents} img={el.img} population={el.population}  />
+		
+		<Paginado
+                countriesPerPage={countriesPerPage}
+                allCountries={allCountries.length}
+                paginado={paginado}
+            /></div> 
+	
+	<FiltActivity />
+
+	{
+                    currentCountries.map(el => {
+                        return (
+                            <div key={el.id}>
+                                <Link to={"/home/" + el.id} >
+		<Card name={el.name}  continents={el.continents} img={el.img} population={el.population}  />
 		</Link>
 		</div>
 		)})}
 		</div>
-	)}
+	 )}
+	 

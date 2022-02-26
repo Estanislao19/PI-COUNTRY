@@ -1,0 +1,72 @@
+.act{
+    background-image: url(https://c8.alamy.com/compes/pak1bn/juego-de-ninos-haciendo-actividades-ilustracion-pak1bn.jpg);
+    padding: 200px;
+}
+.btn{
+    color:rgb(38, 61, 192);
+    border: 1px solid;
+}
+.tit{
+    color:rgb(246, 250, 0);
+    text-shadow: 3px 3px rgb(207, 14, 14);
+    justify-content: flex-end;
+}
+.cont{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    text-align: center;
+}
+.kik{
+    height: 10px;
+    border-radius:25px;
+    padding: 4px 4px 5px 5px;
+    font-size:1.1rem;
+    color: rgb(104, 21, 248);
+    text-shadow: 1px 1px rgb(207, 14, 14);
+    align-items: center;
+    text-align: center;
+}
+.input{
+    height: 20px;
+    border-radius: 10px;
+    padding: 5px 50px 5px 10px;
+    font-size: 0.8rem;
+    border: 1px solid #070707;
+    background-color: #2b7e7e;
+    text-align: center;
+}
+.form{
+    text-align: center;
+}
+
+.label{
+    height: 20px;
+    border-radius: 20px;
+    padding: 0px 10px 10px 10px;
+    font-size: 1.2rem;
+    color:rgb(21, 139, 21);
+    text-shadow: 1px 1px rgb(17, 16, 16);
+}
+.es{
+height: 20px;
+text-align: center;
+padding-right: 70px  ;
+color:rgb(21, 96, 139);
+font-size: 1,5rem;
+}
+
+.conti {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.name{
+    font-weight: 500;
+    padding: 0.8em 1.5em;
+}
+.btnn{
+    color:rgb(192, 87, 38);
+    
+}

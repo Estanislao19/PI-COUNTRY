@@ -1,27 +1,29 @@
-import React from'react';
 
-export default function Paginado ({countriesPerPage,allCountries,paginado}){
 
-const pageNumber =[]
+import React from 'react';
+import Style from "./Paginado.module.css"
 
-for(let i=1; i<=Math.ceil(allCountries/countriesPerPage); i++){ //28
-    pageNumber.push(i)
-}
-//el  numero es cada una de las paginas que yo necisito para renderizar todos mis persoanjes
 
-return(
-    <nav>
-        <ul>
-            {pageNumber && pageNumber.map(number=>{
-                return(
-                      
-                    <button  onClick={()=>paginado(number)}>{number}</button>
-              
+export default function Paginado({ countriesPerPage, allCountries, paginado }) {
+    
+    const pageNumbers = []
+
+    for (let i = 1; i <= Math.ceil(allCountries/countriesPerPage); i++) {
+        pageNumbers.push(i)
+
+    }
+
+    return ( //ésto renderiza los numeritos del paginado
+        <nav className={Style.nav}>
+            <ul className={Style.pagina}>
+                {pageNumbers &&
+                    pageNumbers.map(number => (
                    
-                )
-            })}
-        </ul>
-    </nav>
-)
-
+                            <button className={Style.num} onClick={() => paginado(number)}>{number}</button>
+                        
+                    ))}
+            </ul>
+        </nav>
+    )
 }
+

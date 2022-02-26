@@ -1,17 +1,20 @@
 .ho{
-    background-image:url(https://cnnespanol.cnn.com/wp-content/uploads/2016/11/161102175336-cnnee-promo-enfoque-argentina-00000117-full-169.jpg?quality=100&strip=info&w=384&h=216&crop=1);
-    padding: 70px;
+    background-image:url(https://www.geoenciclopedia.com/wp-content/uploads/2018/10/banderas-paises.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .hom {
     
     color:rgb(43, 205, 226);
-    text-shadow: rgb(161, 97, 97);
+    text-shadow: 3px 3px rgb(161, 97, 97);
     align-items: left;
-    
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
 }
 .hon{
     padding: 5px 20px ;
-    color:green;
+    color:rgb(0, 34, 128);
     gap:10px;
     border:flex;
     border-color:rgb(0, 204, 255);
@@ -35,3 +38,4 @@ border-color: blue;
     border-color:rgb(160, 17, 17);
     
 }
+

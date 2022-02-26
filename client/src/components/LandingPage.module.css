@@ -11,5 +11,6 @@ background-repeat: no-repeat;
 .h1{
     color:black;
     text-shadow: 3px 3px rgb(207, 14, 14);
-    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
 }

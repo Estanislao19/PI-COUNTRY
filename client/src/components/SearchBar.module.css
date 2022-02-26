@@ -1,0 +1,17 @@
+.sea{
+    position: relative;
+}
+.se{
+    height:20px;
+    border-radius: 20px;
+    padding: 5px 50px 5px 10px;
+    font-size: 0.8rem;
+    border: 1px solid #BCE0ED;
+    background-color: #BCE0ED;
+}
+.byt{
+    position:relative;
+    left: 5px;
+    cursor:pointer;
+    border-color: rgb(36, 48, 39);
+}

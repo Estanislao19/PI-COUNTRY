@@ -1,0 +1,25 @@
+.det{
+    background-image: url(https://cnnespanol.cnn.com/wp-content/uploads/2016/11/161102175336-cnnee-promo-enfoque-argentina-00000117-full-169.jpg?quality=100&strip=info&w=384&h=216&crop=1);
+}
+.tit {
+    color:rgb(114, 43, 43);
+  justify-content: center;
+  font-weight: bold;
+}
+.actividades{
+    color:green;
+    text-shadow:3px 3px red;
+}
+.activid{
+    color:rgb(114, 43, 43)
+}
+.tat {
+    color:green;
+    text-shadow:3px 3px red;
+}
+
+.btnn{
+    color:aqua;
+    padding: 2px 15px;
+    border-color:rgb(160, 17, 17);
+}

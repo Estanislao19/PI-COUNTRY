@@ -1,9 +1,9 @@
 import React,{useState,useEffect} from "react";
-import {Link, Navigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {postActivity,getCountries} from '../actions/index';
 import {useDispatch,useSelector} from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
+import Style from './ActivityCreated.module.css';
 
 
 export default function ActivityCreated (){
@@ -83,35 +83,36 @@ useEffect(()=>{
 console.log('e',input)
 
 return (
-    <div >
+    <div className={Style.act}>
       <div >
         <Link to='/home'>
-          <button >Volver</button>
+          <button className={Style.btn}>Volver</button>
         </Link>
       </div>
-      <h1 >CREAR ACTIVIDAD</h1>
-      <form onSubmit={(e) => handleSubmit(e)} >
+      <h1 className={Style.tit} >CREAR ACTIVIDAD</h1>
+      <form className={Style.form} onSubmit={(e) => handleSubmit(e)} >
         <div>
-          <div >
-            <label >Nombre: </label>
+          <div className={Style.cont} >
+            <label className={Style.label}>Nombre: </label>
             <input
               type='text'
               value={input.name}
               name='name'
               pattern='[a-zA-Z\u00C0-\u017F ]{2,254}'
               onChange={handleChange}
-              
+              className={Style.input}
             />
             {errors.name && <p>{errors.name}</p>}
           </div>
           <div >
-            <label >Dificultad: </label>
+            <label className={Style.label}>Dificultad: </label>
             <label>
               <input
                 type='radio'
                 value='1'
                 name='difficulty'
                 onChange={(e) => handleCheck(e)}
+                className={Style.dea}
               />
               1
             </label>
@@ -152,19 +153,19 @@ return (
               5
             </label>
           </div>
-          <div >
-            <label >Duracion: </label>
+          <div className={Style.cont}>
+            <label className={Style.label}>Duracion: </label>
             <input
               type='text'
               value={input.duration}
               name='duration'
               onChange={handleChange}
-              
+              className={Style.input}
             />
             {errors.duration && <p>{errors.duration}</p>}
           </div>
           <div >
-            <label >Temporada: </label>
+            <label className={Style.label}>Temporada: </label>
             <label>
               <input
                 type='radio'
@@ -203,8 +204,8 @@ return (
             </label>
             {errors.season && <p>{errors.season}</p>}
           </div>
-          <div >
-            <label >Pais donde se realiza: </label>
+          <div className={Style.cont}>
+            <label className={Style.label} >Pais donde se realiza: </label>
             <div >
               <select
                 onChange={(e) => handleSelect(e)}
@@ -218,18 +219,19 @@ return (
             {errors.countries && <p>{errors.countries}</p>}
           </div>
           {input.countries.map((e) => (
-            <div >
-              <p >{e}</p>
+            <div className={Style.conti} >
+              <p  className={Style.name}>{e}</p>
               <button
                 type='button'
                 onClick={() => handleDelete(e)}
+                className={Style.btnn}
                  >
                 X
               </button>
             </div>
           ))}
           <div >
-            <button type='submit' >
+            <button className={Style.btnn} type='submit' >
               Crear actividad
             </button>
           </div>

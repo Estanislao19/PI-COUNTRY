@@ -1,0 +1,18 @@
+.nave{ 
+    flex: auto;
+}
+.pagina{
+    text-decoration: none;
+  display: inline-block;
+  padding: 30px;
+  justify-content: center;
+  text-align: center;
+}
+.num{
+    width: 30px;
+    height: 30px;
+    color:rgb(20, 22, 13);
+    background-color: #BCE0ED;
+    gap:10px;
+   
+}

@@ -1,12 +1,12 @@
 
 
 const initialState ={
-    loading: false,
+    
     countries: [],
     allCountries:[],
     activities: [],
-   detail:[],
-    
+    detail:[],
+    filteredCountries:[],
     
 }
 
@@ -22,7 +22,7 @@ switch(action.type){
             allCountries:action.payload,
             
         }
-        case 'GET_ACTIVITY' :
+        case 'GET_ACTIVITIES' :
             return {
                 ...state,
                  activities:action.payload,
@@ -69,8 +69,8 @@ switch(action.type){
                   countries:filtered,
               
                 }
-                case 'FILTER_ACTIVITY': // ordena por actividad
-                const allCountriesAct = state.allCountries;
+               /* case 'FILTER_ACTIVITY': // ordena por actividad
+                const allCountriesAct = state.country;
                 const activitiesFilter = action.payload === "All"? allCountriesAct
                     : allCountriesAct.filter((country) =>country.activities &&
                           country.activities.map((el) => el.name).includes(action.payload)
@@ -80,7 +80,21 @@ switch(action.type){
                   ...state,
                   countries: activitiesFilter,
                 };
-                
+                case 'FILTER_BY_ACTIVITY':
+        const allActivities = state.Allcountries;
+        
+        const filtrado = action.payload ? allActivities : allActivities.filter(e => e.type === action.payload )
+        const allData = filtrado.filter(item => item.countries)
+        //const moreDataFilter = allData.flat();
+
+        return {...state, allcountries: allData}*/
+        case 'FILTER_ACTIVITY':
+            const actFiltered = state.countries.filter(c => c.activities && c.activities.map(a => a.name).includes(action.payload))
+            return {
+                ...state, 
+                countries: actFiltered,
+            }
+
                 
                     case 'GET_DETAIL':
                         return {
