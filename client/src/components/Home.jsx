@@ -1,24 +1,17 @@
 import React from 'react';
 import { useState,useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getCountries,filterCountriesByContinents, filterPopulation,filterAlfa, getActivity} from '../actions';
+import {getCountries,filterCountriesByContinents, filterPopulation,filterAlfa} from '../actions';
 import { Link } from 'react-router-dom';
 import Card from './Card'; 
 import Paginado from './Paginado';
 import SearchBar from './SearchBar';
-
-import Style from './Home.module.css';
 import FiltActivity from './FiltActivity';
+import Style from './Home.module.css';
 
 export default function Home(){
 	const dispatch = useDispatch (); // hook
 	const allCountries = useSelector ((state) =>state.countries);
-	
-    /*const [currentPage,setCurrentPage] =useState(1); 
-	const [countriesPerPage] =useState(9);
-	const indexOfLastCountry= currentPage * countriesPerPage// 9
-	const indexOfFirstCountry= indexOfLastCountry - countriesPerPage; // 0
-	const currentCountry = allCountries.slice(indexOfLastCountry, indexOfFirstCountry) //va a setar la pagina en el indice que yo toque*/
 	const [order, setOrder] = useState('')
 	const [orderaz,setOrderAZ] =useState('')
 	const [currentPage, setCurrentPage] = useState(1)//1ro mi pagina actual y un estado q setee mi pag actual
@@ -42,7 +35,7 @@ export default function Home(){
 
 	useEffect(()=>{
 		dispatch(getCountries())
-		dispatch(getActivity())
+		
 	},[dispatch])
 
 	

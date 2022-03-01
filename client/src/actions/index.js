@@ -77,42 +77,17 @@ export function getDetail(id) {
     }
 }
 
-  /*export function filterByActivity(payload) {
-  return async function(dispatch){
-    let info = await axios.get(`http://localhost:3001/activity?name=${payload}`)
-    console.log('ass', info)
-    return dispatch({
-      type: 'FILTER_BY_ACTIVITY',
-      payload: info.data
-    });
-    
-  }
-}
-
-
-
-/*export function filterByActivity(payload) {
-    return async function(dispatch){
-      let info = await axios.get(`http://localhost:3001/activity?name=${payload}`)
-      return dispatch({
-        type: 'FILTER_BY_ACTIVITY',
-        payload: info.data
-      });
-      
-    }
-  }*/
+ 
 
   export function getActivities() {
     return async function (dispatch) {
-      try {
+     
         let resul = await axios.get(`http://localhost:3001/activity`);
         return dispatch({
           type:'GET_ACTIVITIES',
           payload: resul.data,
         });
-      } catch (error) {
-        console.log(error);
-      }
+     
     };
   }
   
@@ -122,3 +97,4 @@ export function getDetail(id) {
       payload
     }
   }
+ 

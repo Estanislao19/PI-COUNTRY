@@ -9,7 +9,9 @@ export default function FiltActivity() {
     let dispatch = useDispatch()
     const allActivities = useSelector((state) => state.activities)
 
-    useEffect(() => { dispatch(getActivities()) }, [dispatch])
+    useEffect(() => 
+    { dispatch(getActivities()) }
+    , [dispatch])
 
     const handleChange = (e) => {
         dispatch(filterByActivities(e.target.value))
