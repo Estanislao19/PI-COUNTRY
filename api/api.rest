@@ -1,0 +1,10 @@
+POST http://localhost:3001/activity HTTP/1.1
+content-type: application/json
+
+{
+    "countries": ["Andorra", "Argentina", "Brazil", "Belgium"],
+    "name": "dollar blue",
+    "dificulty": 2,
+    "duration": 10,
+    "season": "Verano" 
+}
