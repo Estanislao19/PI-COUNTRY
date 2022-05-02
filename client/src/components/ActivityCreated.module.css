@@ -1,10 +1,30 @@
 .act{
-    background-image: url(https://c8.alamy.com/compes/pak1bn/juego-de-ninos-haciendo-actividades-ilustracion-pak1bn.jpg);
-    padding: 200px;
+    background-image: url(https://png.pngtree.com/background/20210710/original/pngtree-blue-tech-smart-city-background-picture-image_968915.jpg);
+    background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
 }
 .btn{
-    color:rgb(38, 61, 192);
-    border: 1px solid;
+    flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-evenly;
+  appearance: initial;
+  font-style: normal;
+  font-size: large;
+  font-family: monospace;
+  color: rgb(35, 32, 58);
+  word-spacing: normal;
+  text-transform: capitalize;
+  box-sizing: border-box;
+  background-color: blue;
+  padding: 10px;
+  border-width: 6px;
+  border-radius: 50px;
+  border-style: outset;
 }
 .tit{
     color:rgb(246, 250, 0);
@@ -67,6 +87,33 @@ font-size: 1,5rem;
     padding: 0.8em 1.5em;
 }
 .btnn{
-    color:rgb(192, 87, 38);
+    flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-evenly;
+  appearance: initial;
+  font-style: normal;
+  font-size: large;
+  font-family: monospace;
+  color: rgb(35, 32, 58);
+  word-spacing: normal;
+  text-transform: capitalize;
+  box-sizing: border-box;
+  background-color: blue;
+  padding: 10px;
+  border-width: 6px;
+  border-radius: 50px;
+  border-style: outset;
     
+}
+
+.select{
+    width:180px;
+	padding:3px 10px;
+	border:1px solid rgb(9, 17, 17);
+	border-radius:3px;
+	background-color:rgb(25, 143, 143);
+	margin:8px 0;
+	display:inline-block;
+    margin-left: 40px;
 }

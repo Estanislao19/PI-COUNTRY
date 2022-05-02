@@ -1,25 +1,53 @@
 .det{
     background-image: url(https://cnnespanol.cnn.com/wp-content/uploads/2016/11/161102175336-cnnee-promo-enfoque-argentina-00000117-full-169.jpg?quality=100&strip=info&w=384&h=216&crop=1);
+    
 }
-.tit {
-    color:rgb(114, 43, 43);
-  justify-content: center;
-  font-weight: bold;
-}
+
 .actividades{
     color:green;
-    text-shadow:3px 3px red;
+    
+    
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  margin: 20px 0 0px;
+  line-height: 1.1em;
+  text-shadow: -2px -2px 2px #000000, 2px -2px 2px #000000, -2px 2px 2px #000000,
+    2px 2px 2px #000000;
 }
 .activid{
     color:rgb(114, 43, 43)
 }
 .tat {
-    color:green;
-    text-shadow:3px 3px red;
+    display: flex;
+    justify-content: center;
+    color:rgb(25, 102, 190);
+    padding: 10px;
+    margin-left: 35%;
+    margin-right: 35%;
+    background-color: transparent;
+    box-shadow: 2px 2px 2px 2px rgb(93, 92, 92);
+    backdrop-filter: blur(20px);
 }
 
+
 .btnn{
-    color:aqua;
-    padding: 2px 15px;
-    border-color:rgb(160, 17, 17);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(8, 3, 3);
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    
+    font-family: "Rowdies", cursive;
+}
+.img{
+    width: 300px;
+    height: 300px;
+    margin-left: 39%;
 }

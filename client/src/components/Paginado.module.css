@@ -1,5 +1,14 @@
 .nave{ 
-    flex: auto;
+    color:rgb(0, 0, 0);
+  font-size: 14px;
+  font-family:"Open Sans", sans-serif;
+  border-radius: 16px;
+  border-width: 0px;
+  background-color: #e5e5e5;
+  border: 1px solid rgba(41, 41, 41, 0.589);
+  height: 25px;
+  white-space: nowrap;
+  align-items: center;
 }
 .pagina{
     text-decoration: none;
@@ -9,10 +18,13 @@
   text-align: center;
 }
 .num{
-    width: 30px;
-    height: 30px;
-    color:rgb(20, 22, 13);
-    background-color: #BCE0ED;
-    gap:10px;
+     text-decoration: none;
+    list-style: none;
+    background-color: #D6ECF6;
+    border-radius: 50px;
+    justify-content: center;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
    
 }

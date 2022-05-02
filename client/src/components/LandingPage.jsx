@@ -7,7 +7,7 @@ export default function LandingPage () {
         <div className={style.page}>
             <div className={style.h1}>
             <h1>Bienvenidos a mi pagina de paises</h1>
-            <Link to='/home'><button>Ingresar</button></Link>
+            <Link to='/home'><button className={style.btn}>Ingresar</button></Link>
             </div>
         </div>
     )

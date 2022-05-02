@@ -10,8 +10,17 @@
     background-color: #BCE0ED;
 }
 .byt{
-    position:relative;
-    left: 5px;
-    cursor:pointer;
-    border-color: rgb(36, 48, 39);
+    font-family: "Zen Antique", serif;
+    display: inline-block;
+    color: rgb(12, 11, 11);
+    border: 1px solid #ccc;
+    background-color: #BCE0ED;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    max-width: 135px;
+    padding: 10px;
+  
+    text-align: center;
+    vertical-align: middle;
+    font-size: small;
 }

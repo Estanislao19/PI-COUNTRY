@@ -1,30 +1,38 @@
 import React from 'react';
 import { useState,useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getCountries,filterCountriesByContinents, filterPopulation,filterAlfa} from '../actions';
+import {getCountries,filterCountriesByContinents, filterPopulation,filterAlfa, getActivities, filterByActivities} from '../actions';
 import { Link } from 'react-router-dom';
 import Card from './Card'; 
 import Paginado from './Paginado';
 import SearchBar from './SearchBar';
-import FiltActivity from './FiltActivity';
+
 import Style from './Home.module.css';
 
 export default function Home(){
 	const dispatch = useDispatch (); // hook
 	const allCountries = useSelector ((state) =>state.countries);
+	const allActivities = useSelector((state) => state.activities)
+
+    
 	const [order, setOrder] = useState('')
 	const [orderaz,setOrderAZ] =useState('')
 	const [currentPage, setCurrentPage] = useState(1)//1ro mi pagina actual y un estado q setee mi pag actual
     // const [countriesPerPage, setCountriesPerPage] = useState(10)//setea cant personajes x pag
-    var countriesPerPage = 0;
-    if (currentPage === 1) { countriesPerPage = 9 }
-   if (currentPage >= 2) { countriesPerPage = 10 }
+    const [countriesPerPage, setcountryPerPage] = useState(9);
     const lastCountry = currentPage * countriesPerPage//10
     const firstCountry = lastCountry - countriesPerPage //0
     const currentCountries = allCountries.slice(firstCountry, lastCountry)//ésta constante tiene los personajes que estan en la pagina actual
+     
+	
 
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber)
+    }
+
+	const handleChange = (e) => {
+        dispatch(filterByActivities(e.target.value))
+		setCurrentPage(1)
     }
 
    function handleClick(e){
@@ -35,6 +43,7 @@ export default function Home(){
 
 	useEffect(()=>{
 		dispatch(getCountries())
+		dispatch(getActivities())
 		
 	},[dispatch])
 
@@ -42,6 +51,7 @@ export default function Home(){
 	
 	function handleFilterStatus(e){
      dispatch(filterCountriesByContinents(e.target.value)) // para aceder a la functiones(e.target.value)
+	 setCurrentPage(1)
 	}
 	
      function handlefilterPopulation(e){
@@ -54,6 +64,7 @@ export default function Home(){
      e.preventDefault();
 	 dispatch(filterAlfa(e.target.value));
 	 setOrderAZ(`Ordenado ${e.target.value}`)
+	 setCurrentPage(1)
 	 }
      
 	 
@@ -61,10 +72,12 @@ export default function Home(){
 		
 			<div className={Style.ho} >
 <div className={Style.hotn} >
-		<Link to = '/activity'><button >Crear Actividades</button></Link>
+		<Link to = '/activity'><button className={Style.cre} >Crear Actividades</button></Link>
+		<br/>
 		<h1 className={Style.hom}>PAGINA DE PAISES</h1>
 		</div>
 		<div >
+			<br/>
 		<select className={Style.hon} onChange = {e=>handleFilterStatus(e)} >
 		<option value="All">Todos</option>
 		<option value="Europe">Europa</option>
@@ -74,28 +87,34 @@ export default function Home(){
 		<option value="North America">North America</option>
 		<option value="South America">South America</option>
 		</select>
-		<select className={Style.honn} onChange ={e => handlefilterPopulation(e)}>
+		<select className={Style.hon} onChange ={e => handlefilterPopulation(e)}>
 			<option value ='asendente'>Mayor Poblacion</option>
 			<option value ='desendente'>Menor Poblacion</option>
 		</select>
-		<select className={Style.honny} onChange ={e => handlefilterAlfa(e)}>
+		<select className={Style.hon} onChange ={e => handlefilterAlfa(e)}>
 		<option value ='asc'>A-Z</option>
 		<option value ='des'>Z-A</option>
 		</select>
 		
-		<button className={Style.btn}  onClick={e=> {handleClick(e)}}>Volver a cargar paises</button>
+           
+		
+		
 		</div>
 		<br/>
 		<div>
 		<SearchBar/>
-		
+		<button className={Style.btn}  onClick={e=> {handleClick(e)}}>Volver a cargar paises</button>
 		<Paginado
                 countriesPerPage={countriesPerPage}
                 allCountries={allCountries.length}
                 paginado={paginado}
             /></div> 
+			
 	
-	<FiltActivity />
+	<select className={Style.hon} onChange={(e) => handleChange(e)}>
+                <option >Select Activity</option>
+                {allActivities?.map(e => (<option key={e.id} value={e.name}>{e.name}</option>))}
+            </select>
 
 	{
                     currentCountries.map(el => {

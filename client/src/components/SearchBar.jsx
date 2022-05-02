@@ -7,7 +7,7 @@ import Style from'./SearchBar.module.css';
 export default function SearchBar () {
     const dispacth = useDispatch();
     const [name,setName] = useState('')
-
+    
     function handleInputChange(e){
      e.preventDefault();
      setName(e.target.value); // agarro el value del input
@@ -18,7 +18,10 @@ export default function SearchBar () {
         dispacth(getSearch(name)) // el name va a ser mi estado local voy a guadar lo que voy a hacer en name
         setName({
          name:""
+         
         })
+        
+        
     }
 
     return (

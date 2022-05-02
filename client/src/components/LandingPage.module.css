@@ -1,5 +1,5 @@
 .page{
-background-image: url(https://i.ytimg.com/vi/t9mge2QrHig/maxresdefault.jpg);
+background-image: url(https://img.freepik.com/fotos-gratis/um-aviao-de-papel-voa-ao-redor-do-mundo-uma-imagem-conceitual-de-uma-viagem-ao-redor-do-mundo-materiais-da-nasa-usados-para-criar-o-efeito-de-mundo-brilhante-imagem-3d_476363-2178.jpg?w=2000);
 background-position: center;
 
 background-size: cover;
@@ -9,8 +9,29 @@ background-repeat: no-repeat;
 }
 
 .h1{
-    color:rgb(47, 255, 151);
+    position: absolute;
+    left:0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.561);
+    color: #66acfc;
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
     text-shadow:3px 3px rgb(22, 19, 19);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
+}
+
+.btn{
+    font-family: "Zen Antique", serif;
+    display: inline-block;
+    color: white;
+    border: 1px solid #ccc;
+    background: black;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    vertical-align: middle;
+    max-width: 150px;
+    padding: 10px;
+    text-align: center;
 }

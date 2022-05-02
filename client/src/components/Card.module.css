@@ -24,6 +24,26 @@
     
 }
 
+.text{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: 'none';
+    color: rgb(12, 112, 107);
+    text-align: center;
+}
+
+.img{
+    position: relative;
+    border-radius: 50%;
+    display: block;
+    height: 20rem;
+    width: 20rem;
+    border-top: 0.8rem solid #fff;
+    border-bottom: 0.8rem solid #fff;
+    object-fit: cover;
+    margin: 2rem auto;
+    transition: all 0.3s ease;
+}
+
 
 
 

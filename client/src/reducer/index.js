@@ -36,9 +36,10 @@ switch(action.type){
                 
             }
             case 'GET_SEARCH':
+               
                 return {
                     ...state, 
-                    countries:action.payload
+                    countries:action.payload,
                 }
                 case 'POST_ACTIVITY':
                     return {

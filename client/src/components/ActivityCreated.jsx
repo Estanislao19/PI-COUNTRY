@@ -209,7 +209,7 @@ return (
             <div >
               <select
                 onChange={(e) => handleSelect(e)}
-                
+                className={Style.select}
               >
                 {countries.map((country) => (
                   <option value={country.name}>{country.name}</option>
