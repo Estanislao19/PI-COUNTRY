@@ -40,6 +40,7 @@ export default function Detail () {
                  <h2 className={Style.tat}> Name of the activity:{c.name}</h2>
                  <h2 className={Style.tat}>Duration of activity:{c.duration} hour/s</h2>
                  <h2 className={Style.tat}>Season:{c.season}</h2>
+                 
                </div>
              )) : 
              <h2>No hay actividades creadas para este pais</h2>
