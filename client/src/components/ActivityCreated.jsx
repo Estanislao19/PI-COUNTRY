@@ -12,7 +12,7 @@ const countries = useSelector ((state) =>state.countries);
 const [errors,setErrors]=useState({})
 const [input,setInput] =useState({
     name:"",
-    difficulty:"",
+  
     duration:"",
     season:"",
     countries:[], // quiero que se carge mas de una
@@ -46,7 +46,7 @@ function handleSelect(e){
 function handleSubmit(e) {
     if (
       !input.name ||
-      !input.difficulty ||
+      
       !input.duration ||
       !input.season ||
       !input.countries
@@ -105,53 +105,7 @@ return (
             {errors.name && <p>{errors.name}</p>}
           </div>
           <div >
-            <label className={Style.label}>Dificultad: </label>
-            <label>
-              <input
-                type='radio'
-                value='1'
-                name='difficulty'
-                onChange={(e) => handleCheck(e)}
-                className={Style.dea}
-              />
-              1
-            </label>
-            <label>
-              <input
-                type='radio'
-                value='2'
-                name='difficulty'
-                onChange={(e) => handleCheck(e)}
-              />
-              2
-            </label>
-            <label>
-              <input
-                type='radio'
-                value='3'
-                name='difficulty'
-                onChange={(e) => handleCheck(e)}
-              />
-              3
-            </label>
-            <label>
-              <input
-                type='radio'
-                value='4'
-                name='difficulty'
-                onChange={(e) => handleCheck(e)}
-              />
-              4
-            </label>
-            <label>
-              <input
-                type='radio'
-                value='5'
-                name='difficulty'
-                onChange={(e) => handleCheck(e)}
-              />
-              5
-            </label>
+           
           </div>
           <div className={Style.cont}>
             <label className={Style.label}>Duracion: </label>

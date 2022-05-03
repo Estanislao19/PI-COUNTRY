@@ -28,7 +28,6 @@ export default function Detail () {
            <h1 className={Style.actividades}>Title:{e.name}</h1>
            <h2 className={Style.tat}>Code the country:{e.id}</h2>
            <h3 className={Style.tat}>Capital:{e.capital}</h3>
-           <h3 className={Style.tat}>Subregion:{e.subregion}</h3>
            <h3 className={Style.tat}>Area:{e.area}Km2</h3>
            <h3 className={Style.tat}>Population:{e.population}</h3>
            <img className={styleMedia.img} src={e.img} alt="img not found" />
@@ -40,7 +39,6 @@ export default function Detail () {
                  
                  <h2 className={Style.tat}> Name of the activity:{c.name}</h2>
                  <h2 className={Style.tat}>Duration of activity:{c.duration} hour/s</h2>
-                 <h2 className={Style.tat}>Difficulty of the activity:{c.difficulty}</h2>
                  <h2 className={Style.tat}>Season:{c.season}</h2>
                </div>
              )) : 

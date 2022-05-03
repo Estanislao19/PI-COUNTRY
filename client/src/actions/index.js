@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export function getCountries(){
 return async function (dispatch) {
-    var json = await axios.get('http://localhost:3001/countries')
+    var json = await axios.get('/countries')
     return dispatch({
     type:'GET_COUNTRIES',
     payload:json.data,
@@ -13,7 +13,7 @@ return async function (dispatch) {
 }
 export function getActivity(){
     return async function (dispatch){
-        var json=await axios.get('http://localhost:3001/activity')
+        var json=await axios.get('/activity')
         console.log('jsonn',json.data)
         return dispatch({
             type: 'GET_ACTIVITY ',
@@ -23,7 +23,7 @@ export function getActivity(){
 }
 export function postActivity(payload) {
     return async function (dispatch) {
-        var response = await axios.post("http://localhost:3001/activity", payload);
+        var response = await axios.post("/activity", payload);
         console.log(response);
         return dispatch({
           type:'POST_ACTIVITY',
@@ -35,13 +35,13 @@ export function postActivity(payload) {
 export function getSearch(name){
     return async function (dispatch){
         try{
-            var json=await axios.get("http://localhost:3001/countries?name=" + name);
+            var json=await axios.get("/countries?name=" + name);
             return dispatch({
                 type:'GET_SEARCH',
                 payload:json.data
             })
         }catch(e){
-            console.log(e)
+            alert('no se encuntra el pais que estas buscando')
         }
     }
 }
@@ -69,7 +69,7 @@ export function filterAlfa(payload){
 }
 export function getDetail(id) {
     return async function (dispatch){
-        var json =await axios.get(`http://localhost:3001/countries/${id}`);
+        var json =await axios.get(`/countries/${id}`);
         return dispatch ({
          type: 'GET_DETAIL',
          payload:json.data
@@ -82,7 +82,7 @@ export function getDetail(id) {
   export function getActivities() {
     return async function (dispatch) {
      
-        let resul = await axios.get(`http://localhost:3001/activity`);
+        let resul = await axios.get(`/activity`);
         return dispatch({
           type:'GET_ACTIVITIES',
           payload: resul.data,
