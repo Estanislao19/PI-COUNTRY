@@ -98,7 +98,7 @@ router.post('/activity',async(req,res)=>{
 			season,
 		})
 		console.log("CREATED ACTIVITY ",activity.name)
-		let countriesDb =[];
+		
 
 		countries.forEach(async country => {
         
@@ -108,7 +108,7 @@ router.post('/activity',async(req,res)=>{
 				}
 			})
 		
-		countriesDb.push(countryDb)
+		
 		await countryDb.addActivity(activity)
 		
 
